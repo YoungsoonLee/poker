@@ -20,7 +20,7 @@ Externally represent each card using two characters: one for the rank (2-9, T, J
         - Using Sort ( O(logN) )
         - Get evaluate rank(string) and rank order(int)
     5. Rank who won.
-        - Using MinHeep by evaluated rank order ( O(logN) )
+        - Using MinHeap by evaluated rank order ( O(logN) )
     6. Print who won and Print whole detail information like handID, rank(string), rank order(int) and cards(string)
 
 ex)
