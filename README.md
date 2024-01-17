@@ -23,45 +23,70 @@ Externally represent each card using two characters: one for the rank (2-9, T, J
         - Using MinHeep by evaluated rank order ( O(logN) )
     6. Print who won and Print whole detail information like handID, rank(string), rank order(int) and cards(string)
 
-    ex). 
+ex)
+
+<img src="./images/1.png">
 
 #### 2. I made it a CLI tool. How to use it is below.
 
 
     
-### How to Run (usage)
+## How to Run (usage)
+### Run
+```console
+> git clone https://github.com/YoungsoonLee/poker.git
+> cd poker
+> ./poker-cli prompt
+```
+<img src="./images/1.png">
 
-    > 
-build
+### CLI Command
+```console
+./poker-cli help : you can see help include command
+```
+<img src="./images/2.png">
 
-run
+```console
+./poker-cli rs : Random-Single: Generate random cards for a hand and then evaluate and then show the result.
+```
+<img src="./images/3.png">
 
-usage
+```console
+./poker-cli rm --input=5 : Random-Multi-Hands: Generate random cards for multi hand(--input) and then evaluate and then show the result.
+```
+<img src="./images/4.png">
+
+```console
+./poker-cli promt : Take the number of hands and cards as input. and then evaluate and then show the result.
+```
+<img src="./images/1.png">
+
+### Build
+```console
+make build
+```
+
+## Rank Order
+I referenced this site for [rank order](https://www.cardplayer.com/rules-of-poker/hand-rankings)
+
+| Ran Order (int)   | Rank (string)         |
+| ------------------| ----------------------|
+|       1           |  Royal flush.         |
+|       2           |  Straight flush.      |
+|       3           |  Four of a kind.      |
+|       4           |  Full house.          |
+|       5           |  Flush                |
+|       6           |  Straight             |
+|       7           |  Three of a kind.     |
+|       8           |  Two pair.            |
+|       9           |  Pair                 |
+|       10          |  High Card.           |
 
 
+## Version & Library
+-   Golang : v1.21
+-   I used the standard library, but for fast and convenient CLI development I used Cobra and the promptui library.
+-   For CLI:
+    -   [cobra](https://github.com/spf13/cobra)
+    -   [promptui](https://github.com/manifoldco/promptui)
 
-### Rank Order
-I referenced this site [rank order](https://www.cardplayer.com/rules-of-poker/hand-rankings)
-
-    1. Royal flush. 
-    2. Straight flush. 
-    3. Four of a kind. 
-    4. Full house. 
-    5. Flush. 
-    6. Straight. 
-    7. Three of a kind. 
-    8. Two pair. 
-    9. Pair. 
-    10. High Card. 
-
-cli
-github.com/spf13/cobra
-https://github.com/manifoldco/promptui
-
-
-https://archive.is/G6GZg
-
-https://github.com/cardrank/cardrank/tree/master
-
-
-minHeap
