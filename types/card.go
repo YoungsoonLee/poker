@@ -1,3 +1,4 @@
+// Package types provides types and functions related to playing cards.
 package types
 
 import (
@@ -5,25 +6,25 @@ import (
 	"strings"
 )
 
-// rank map
+// RankMap maps the rank of a card to its corresponding integer value.
 var RankMap = map[string]int{
 	"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "T": 10, "J": 11, "Q": 12, "K": 13, "A": 14,
 }
 
-// rank map
+// RankMapReverse maps the integer value of a card to its corresponding rank.
 var RankMapReverse = map[int]string{
 	2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "T", 11: "J", 12: "Q", 13: "K", 14: "A",
 }
 
-// suit map
+// SuitMap maps the suit of a card to an empty struct.
 var SuitMap = map[string]struct{}{
 	"S": {}, "H": {}, "D": {}, "C": {},
 }
 
-// Card represents a playing card
+// Card represents a playing card.
 type Card struct {
-	Rank string // 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A
-	Suit string // S, H, D, C
+	Rank string // Rank of the card (2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A)
+	Suit string // Suit of the card (S, H, D, C)
 }
 
 // NewCard creates a new Card object based on the provided inputCard string.
@@ -63,6 +64,7 @@ func NewCard(inputCard string) ([]Card, error) {
 	return card, nil
 }
 
+// String returns a string representation of the card.
 func (c Card) String() string {
 	return c.Rank + c.Suit
 }

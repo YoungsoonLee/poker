@@ -16,7 +16,7 @@ import (
 // It is a constant value for default.
 const handCardCount = 5
 
-// HandID represents the unique identifier of a hand.
+// Hand represents the unique identifier of a hand.
 // Cards represents the cards in the hand.
 type Hand struct {
 	HandID int
@@ -32,7 +32,6 @@ func NewHand(handID int) Hand {
 	}
 }
 
-// randomCard returns a random card
 // RandomCards generates a random Hand of cards based on the given handID.
 // It uses a list of ranks and suits to randomly select a rank and suit for each card in the Hand.
 // The generated Hand is returned.
@@ -256,6 +255,7 @@ func RandomCardsToHands(num int) Hands {
 	return hands
 }
 
+// MinHeap is a type representing a minimum heap of Hand objects.
 type MinHeap []Hand
 
 func (h MinHeap) Len() int {
@@ -273,10 +273,13 @@ func (h MinHeap) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
+// Push adds a Hand to the MinHeap.
 func (h *MinHeap) Push(x interface{}) {
 	*h = append(*h, x.(Hand))
 }
 
+// Pop removes and returns the top element from the MinHeap.
+// It modifies the underlying heap and returns the removed element.
 func (h *MinHeap) Pop() interface{} {
 	old := *h
 	n := len(old)
@@ -285,7 +288,7 @@ func (h *MinHeap) Pop() interface{} {
 	return x
 }
 
-// HandID is the unique identifier for a hand.
+// HandResult is the unique identifier for a hand.
 // Card is the list of cards in the hand.
 // Rank is the rank of the hand.
 // RankOrder is the order of the hand's rank.
